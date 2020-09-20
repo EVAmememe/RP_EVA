@@ -4,3 +4,16 @@
 [0920/185212.536:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0920/185233.495:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0920/185233.496:ERROR:crash_report_database_win.cc(469)] failed to stat report
+<<<<<<< Updated upstream
+=======
+[0920/185633.851:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/185633.851:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/190835.616:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/190835.617:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/191632.038:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/191632.039:ERROR:crash_report_database_win.cc(469)] failed to stat report
+>>>>>>> Stashed changes
+[0920/192053.956:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/192053.956:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/192155.243:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0920/192155.245:ERROR:crash_report_database_win.cc(469)] failed to stat report
