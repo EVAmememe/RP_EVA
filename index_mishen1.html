@@ -5,8 +5,23 @@
         <title>Мишень 1</title>
         <link href="CSS\style_mishen1.css" rel="stylesheet">   
     </head>
-    <body>
-        <p> <canvas id="canvas" width="1000" height="1000" ></canvas> </p>
+    <body background="kartinki\1.jpg">
+        <div id="div1">
+            <p> <input id="inpK" type="text" placeholder= "Введите радиус/координаты: r,x,y"> </p>
+            <p> <button id="buttonK">Отправить радиус/координаты</button> </p>
+        </div>
+        <div id="div2">
+            <p> <button id="krug">Выстрелить в круг</button> </p>
+            <p> <button id="romb">Выстрелить в ромб</button> </p>
+            <p> <button id="sqr">Выстрелить в квадрат</button> </p>
+            <p> <button id="star">Выстрелить в "звезду"</button> </p>
+            <p> <button id="all">Выстрелить во всё</button> </p>
+        </div>
+        <div id="div3">
+            <p>Результат:</p>
+            <p id="vivod"></p>
+        </div>
+        <p id="pCanvas"> <canvas id="canvas" width="1000" height="1000" ></canvas> </p>
         <script src="Js\main_mishen1.js"></script>
     </body>
 
