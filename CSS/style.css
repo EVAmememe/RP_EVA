@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 5px solid red;
+    margin-left: 170px;
+    margin-right: 170px;
+    border-radius: 35px;
+    background: lightblue;
+}
+.container *{
+    margin: 20px;
+}
+#image{
+    margin-top: 30px;
+    height: 300px;
+    width: 300px;
+}
+p{
+    font-size: 30px;
+    color: #636363;
+}
