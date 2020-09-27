@@ -1,0 +1,32 @@
+
+body {
+    background-size: 100%;
+}
+#div1 {
+    height: 400px;
+    width: 400px;
+    border: 5px solid rgb(0, 0, 0);
+    margin-right: 170px;
+    border-radius: 35px;
+    background: rgb(247, 180, 247);
+}
+
+#div3 {
+    position: absolute;
+    left: 415px;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    width: 600px;
+    border: 5px solid rgb(0, 0, 0);
+    margin-right: 170px;
+    border-radius: 35px;
+    background: rgb(247, 180, 247);
+}
+p {
+    font-size: 30px;
+    color: #000000;
+}

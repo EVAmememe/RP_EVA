@@ -5,8 +5,28 @@
         <title>Массивы</title>
         <link href="CSS\style.css" rel="stylesheet">   
     </head>
-    <body>
-        <canvas id="canvas" width="1000" height="1000" ></canvas>
+    <body background="kartinki\1.jpg">
+        <div id="div1">
+            <input id="inpM" type="text" placeholder="Введите массив">
+            <button id="buttonM">Ввести массив</button>
+            <div id ="div2">
+                <p> <button id="button0">Поменять противоположных</button> </p>
+                <p> <button id="button1">Поменять  соседние</button> </p>
+                <p> <button id="button2">Поменять наиб. и наим.</button> </p>
+                <p> <button id="button3">Сортировка по возрастанию</button> </p>
+                <p> <button id="button4">Сортировка по убыванию</button> </p>
+                <p> <button id="button5">Сумма эл. массива</button> </p>
+                <p> <button id="button6">Сумма пол. и отр. эл. массива</button> </p>
+            </div>
+        </div>
+        <div id="div3">
+            <p>Массив:</p>
+            <p id="oldM">-12,135,47,-64,38,-19,17</p>
+            <p>Итог сортировки:</p>
+            <p id="newM"></p>
+        </div>
+
+        <!--<canvas id="canvas" width="1000" height="1000" ></canvas>-->
         <script src="Js\main.js"></script>
     </body>
 
