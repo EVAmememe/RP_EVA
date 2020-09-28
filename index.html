@@ -5,22 +5,25 @@
         <title>РПГ</title>
         <link href="CSS\style.css" rel="stylesheet">   
     </head>
-    <body>
+    <body background="kartinki\1.jpg">
         
-        <div>
+        <div class="container">
             <h1>РПГшечка</h1>
             <p> Студент! Тебе надо найти еду! И знания. Но лучше еду</p>
         </div>
         <div class="container">
-            <h1 id="HP">Здоровье студента: 100%</h1>
-            <h1 id="Money">Деньги студента: 500 рублей</h1>
-            <p id="Location">Локация</p>
-            <p id="Result">результат ответа</p>
-            <p id="Ways">столовая, аудитория</p>
+            <p id="hp"></p>
+            <p id="money"></p>
+            <p id="location"></p>
+            <p id="result"></p>
+            <p>Выходы:</p>
+            <p id="ways"></p>
             <input id="inp" type="text" placeholder="куда хочешь пойти?">
-            <button id="Step">Пойти</button>
-            <img src="https://avatars.mds.yandex.net/get-zen_doc/1362552/pub_5d53c49f46f4ff00ad95d29f_5d552f0e06cc4600ae5120f4/scale_1200" id="image">
+            <button id="step">Пойти</button>
+            <img src="" id="image">
         </div>
+            <img class="imagePassiv" class="imageEnd" src="kartinki\roomGO.jpg" id="imageGO">
+            <img class="imagePassiv" class="imageEnd" src="kartinki\roomYW.jpg" id="imageYW">
         <!--<canvas id="canvas" width="1000" height="1000" ></canvas>-->
         <script src="Js\main.js"></script>
     </body>
