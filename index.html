@@ -1,4 +1,4 @@
-<!DOCTUPE html>
+<!DOCTUPE html> 
 <html>
     <head>
         <meta charset="utf-8">
@@ -11,9 +11,15 @@
             <h1>РПГшечка</h1>
             <p> Студент! Тебе надо найти еду! И знания. Но лучше еду</p>
         </div>
-        <div class="container">
+        <div id = "chooseCharacter">
+            <div class="character">
+            </div>
+        </div>
+        <div class="container" class="passiv" id="characterPrint">
             <p id="hp"></p>
             <p id="money"></p>
+            <p id="knowledge"></p>
+            <p id="stress"></p>
             <p id="location"></p>
             <p id="result"></p>
             <p>Выходы:</p>
@@ -22,8 +28,10 @@
             <button id="step">Пойти</button>
             <img src="" id="image">
         </div>
-            <img class="imagePassiv" class="imageEnd" src="kartinki\roomGO.jpg" id="imageGO">
-            <img class="imagePassiv" class="imageEnd" src="kartinki\roomYW.jpg" id="imageYW">
+            <img class="passiv"  src="kartinki\roomGO.jpg" id="imageGO">
+            <img class="passiv"  src="kartinki\roomYW.jpg" id="imageYW">
         <!--<canvas id="canvas" width="1000" height="1000" ></canvas>-->
+        <script src="Js\game\data.js"></script>
+        <script src="Js\game\game.js"></script>
         <script src="Js\main.js"></script>
     </body>

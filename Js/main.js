@@ -1,3 +1,18 @@
+var step = 0;
+var hp = 100;
+var money = 100;
+var golod = 100;
+
+document.getElementById('location').innerHTML = rooms[step].name;
+document.getElementById('result').innerHTML = rooms[step].description;
+
+//start point
+var btn = document.getElementById('step');
+btn.addEventListener('click', stepTo);
+setCharacters();
+printRoomInfo();
+
+/*
 var rooms = [
 [ 
     'коридор0',
@@ -58,87 +73,8 @@ var rooms = [
 ]
 
 ];
+*/
 
-var step = 0;
-document.getElementById('location').innerHTML = rooms[0][0];
-document.getElementById('result').innerHTML = rooms[0][1];
-var hp = 100;
-var money = 100;
-
-function stepTo() {
-    var answer = document.getElementById('inp').value;
-    document.getElementById('inp').value = '';
-    answer = answer.toLowerCase().replace(' ','');
-    if (step === null) {
-        return;
-    }
-    var room = rooms[step];
-    if (!room) {
-        return;
-    }
-    if (!answer) {
-        return;
-    }
-    if (step === 4 || hp<=0 ) {
-        document.getElementById("imageGO").classList.remove("imagePassiv");
-        //var elem = document.getElementById("imageGO");
-        //elem.classList.remove("imagePassiv");
-        return;
-    }
-    if (step === 5 ) {
-        document.getElementById("imageYW").classList.remove("imagePassiv");
-        return;
-    }
-    var isWayNotFound = true;
-    for (var i=0;i < room[2].length;i++) {
-        if (answer === room[2][i]) {
-            hp -= 5;
-            step = room [3][i];
-            isWayNotFound = false;
-            break;
-        }
-    }
-    if (isWayNotFound ) {
-        console.log('неправильно');
-        step = room[4];
-        return; 
-    }
-    if (step === 1 && money >= 20 && hp < 100) {
-        money -= 20;
-        hp = 100;
-    } else if (step === 7) {
-        hp -= 25;
-    }
-    printRoomInfo();
-}
-function printRoomInfo(){
-    if (step != null && rooms[step]){
-        document.getElementById('location').innerHTML = "Локация: " + rooms[step][0];
-    }
-    var b = '';
-    var room = rooms[step];
-    var exits = [];
-    for(var i = 0; i < room[3].length; i++) {
-        var isNameUniq = true;
-        var num = room[3][i];
-        for(var j = 0; j < exits.length; j++) {
-            if(rooms[num][0] == exits[j]) {
-                isNameUniq = false;
-            }
-        }
-        if(isNameUniq){
-            exits.push(rooms[num][0]); 
-        }        
-    }
-    document.getElementById('ways').innerHTML = exits.join(', ');
-    document.getElementById('image').src = rooms[step][5];
-    document.getElementById('money').innerHTML = 'Деньги студента: ' + money + ' рублей';
-    document.getElementById('hp').innerHTML = 'Здоровье студента: ' + hp + '%';
-    document.getElementById('result').innerHTML = rooms[step][1];
-}
-var btn = document.getElementById('step');
-btn.addEventListener('click', stepTo);
-printRoomInfo();
     /*switch (step) {
         case 0: 
         answer = prompt('Перед тобой дверь в столовую и дверь в аудиторию. Куда пойдёшь?');
