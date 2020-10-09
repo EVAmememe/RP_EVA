@@ -1,7 +1,8 @@
 var step = 0;
-var hp = 100;
-var money = 100;
-var golod = 100;
+//var hp = 100;
+//var money = 100;
+var stepsCount = 0;
+var deathTimer = 0;
 
 document.getElementById('location').innerHTML = rooms[step].name;
 document.getElementById('result').innerHTML = rooms[step].description;

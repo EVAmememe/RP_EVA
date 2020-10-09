@@ -1,18 +1,26 @@
 function stepTo() {
+    var room = rooms[step];
     var answer = document.getElementById('inp').value;
     document.getElementById('inp').value = '';
     answer = answer.toLowerCase().replace(' ','');
-    if (step === null) {
+    if ( (step === null) || (!room) || (!answer)) {
         return;
     }
-    var room = rooms[step];
-    if (!room) {
-        return;
+    var isWayNotFound = true;
+    for (var i=0;i < room.ways.length;i++) {
+        if (answer === room.ways[i].answer) {
+            //golod -= 5;
+            step = room.ways[i].step;
+            isWayNotFound = false;
+            break;
+        }
     }
-    if (!answer) {
-        return;
+    if (isWayNotFound ) {
+        console.log('неправильно');
+        step = room.defaultStep;
+        //return; 
     }
-    if (step === 4 || hp<=0 ) {
+    /*if (step === 4 || hp<=0 ) {
         document.getElementById("imageGO").classList.remove("passiv");
         document.getElementById("imageGO").classList.add("aktiv");
         //var elem = document.getElementById("imageGO");
@@ -46,14 +54,51 @@ function stepTo() {
         golod = 100;
     } else if (step === 7) {
         hp -= 25;
-    }
+    }*/
+    calculateStats();
     printRoomInfo();
 }
 
+function calculateStats(){
+    //проверка ХП и местоположения
+    if(step == 1 && character.hp < 100 && character.money >= 50){
+        character.hp += Math.round(5 + (character.knowledge * 0.01));
+        character.money -= 50;
+        printAbilities();
+    }
+    if(step == 2){
+        character.knowledge += 10;
+        character.stress += 3;
+        printAbilities();
+    }
+    if(step == 7){
+        character.hp -= 25;
+        printAbilities();
+    }
+    if(step != 1){
+        character.hp -= Math.round(5 - (character.knowledge * 0.01));
+    }
+    if(character.stress >= 1 && character.hp > 0 && step != 2){
+        character.stress -= 1;   
+    }
+    stepsCount += 1;
+    printAbilities();
+        //вызов сессии и рассчёт шагов
+    if(character.hp <= 5 || character.stress > 90 || deathTimer === 1 ){
+        printDeathPage();
+    } 
+    if( step === 4 ){
+        deathTimer = 1;
+    } 
+    if( step === 5 ){
+        printWinPage();
+    } 
+} 
 
 function printRoomInfo(){
     if (step != null && rooms[step]){
         document.getElementById('location').innerHTML = "Локация: " + rooms[step].name;
+        document.getElementById('result').innerHTML = rooms[step].description;
     }
     var b = '';
     var room = rooms[step];
@@ -84,6 +129,7 @@ function printAbilities() {
     document.getElementById('money').innerHTML = 'Деньги студента: ' + character.money + ' рублей';
     document.getElementById('knowledge').innerHTML = 'Знания студента: ' + character.knowledge;
     document.getElementById('stress').innerHTML = 'Стресс: ' + character.stress + '%';
+    document.getElementById('stepsCount').innerHTML = 'Количество ходов: ' + stepsCount;
 }
 
 
@@ -105,14 +151,19 @@ function setCharacters() {
     var buttons = document.getElementsByClassName('setChooseCharacters');
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
-            console.log(this.dataset.number);
+            //console.log(this.dataset.number);
             character =  characters[this.dataset.number];
-            //document.getElementsById('chooseCharacter').style.display = 'none';
             document.getElementById('chooseCharacter').style.display = 'none';
             printAbilities();
         });
     }
-    console.log(buttons);
+    //console.log(buttons);
+}
+
+function printDeathPage(){
+    document.getElementById('death').style.display = 'flex';
+    document.getElementById('death').style.background = 'red';
+    //document.getElementById('SMS-TEXT').innerHTML = 'ВЫ УМЕРЛИ';
 }
 
 /*<label><b>Парень</b></label>

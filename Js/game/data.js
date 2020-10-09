@@ -106,7 +106,7 @@ var rooms = [
     },
     ];
 
-    var step = 0;
+    //var step = 0;
 
     var characters = [
         {

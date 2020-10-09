@@ -7,19 +7,42 @@
     </head>
     <body background="kartinki\1.jpg">
         
-        <div class="container">
+        <!--<div class="container">
             <h1>РПГшечка</h1>
             <p> Студент! Тебе надо найти еду! И знания. Но лучше еду</p>
-        </div>
+        </div>-->
         <div id = "chooseCharacter">
             <div class="character">
             </div>
         </div>
+        <!--<div id="monster">
+            <div >
+                <img src="img/Rodionova.jpg" id="monster-img">
+            </div>
+            <div id="info-and-choose">
+                <label id="monsterStats"></label>
+                <label id="monsterQuestion"></label>
+                <label id="monsterText"></label>
+                <div id="answers">
+                    <button class="answerButton" id="answer1"></button>
+                    <button class="answerButton" id="answer2"></button>
+                    <button class="answerButton" id="answer3"></button>
+                    <button class="answerButton" id="answer4"></button>
+                </div>
+            </div>
+        </div>-->
+
+        <div id="death">
+            <img class="aktiv"  src="kartinki\roomGO.jpg" id="imageGO">
+            <!--<img class="passiv"  src="kartinki\roomYW.jpg" id="imageYW">-->
+        </div>
+
         <div class="container" class="passiv" id="characterPrint">
             <p id="hp"></p>
             <p id="money"></p>
             <p id="knowledge"></p>
             <p id="stress"></p>
+            <p id="stepsCount"></p>
             <p id="location"></p>
             <p id="result"></p>
             <p>Выходы:</p>
@@ -28,10 +51,9 @@
             <button id="step">Пойти</button>
             <img src="" id="image">
         </div>
-            <img class="passiv"  src="kartinki\roomGO.jpg" id="imageGO">
-            <img class="passiv"  src="kartinki\roomYW.jpg" id="imageYW">
         <!--<canvas id="canvas" width="1000" height="1000" ></canvas>-->
         <script src="Js\game\data.js"></script>
         <script src="Js\game\game.js"></script>
         <script src="Js\main.js"></script>
     </body>
+</html>
