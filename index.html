@@ -7,54 +7,60 @@
         <script src="Js\main.js"></script>   
     </head>
     <body background="kartinki\1.jpg">
-        <div class = "div1">
-            <input data-system="16" id="hex" type="radio" name="toNumber" class='numberSistem' ><label for="hex" >Hex</label><br>
-            <input data-system="10" id="dec" type="radio" name="toNumber" class='numberSistem' ><label for="dec" >Dec</label><br>
-            <input data-system="8"  id="oct" type="radio" name="toNumber" class='numberSistem' ><label for="oct" >Oct</label><br>
-            <input data-system="2"  id="bin" type="radio" name="toNumber" class='numberSistem' ><label for="bin" >Bin</label><br>
-        </div>
-        <div class = "div2">
-            <input id = "input"  disabled><br>
-            <!--dir = "rtl"-->
-    
-            <p>
-                <button  class="number button" >.</button>
-                <button  class="number button" >1</button>
-                <button class="number button">2</button>
-                <button class="number button">3</button>
-                <button class="operand button">+</button>
-            </p>
-            <p>
-                <button class="number button" >4</button>
-                <button class="number button" >5</button>
-                <button class="number button" >6</button>
-                <button class="operand button">-</button>
-            </p>
-            <p>
-                <button class="number button" >7</button>
-                <button class="number button" >8</button>
-                <button class="number button" >9</button>
-                <button class="operand button">*</button>
-                <button class="operand button">^</button>
-            </p>
-            <p>
-                <button class="number button"  >0</button>
-                <button id = "clear"  class="operand button">C</button>
-                <button class="operand button">/</button>
-                <button class="operand button">^2</button>
-                <button class="operand button">1/x</button>
-            </p>
-            <p>
-                <button class="operand button">sqrt</button>
-                <button class="operand button">+/-</button>
-                <button class="operand button">sin</button>
-                <button class="operand button">cos</button>
-            </p>
-            <p>
-            </p>
-            <p>
-                <button id="ravno" class="operand button">=</button>
-            </p>
+        <div class = "div">
+            <div class = "div1">
+                <input data-system="16" id="hex" type="radio" name="toNumber" class='numberSistem' ><label for="hex" >Hex</label><br>
+                <input data-system="10" id="dec" type="radio" name="toNumber" class='numberSistem' ><label for="dec" >Dec</label><br>
+                <input data-system="8"  id="oct" type="radio" name="toNumber" class='numberSistem' ><label for="oct" >Oct</label><br>
+                <input data-system="2"  id="bin" type="radio" name="toNumber" class='numberSistem' ><label for="bin" >Bin</label><br>
+            </div>
+            <div class = "div2">
+                <input id = "input"  disabled><br>
+                <!--dir = "rtl"-->
+        
+                <p>
+                    <button class="operand button">sin</button>
+                    <button class="operand button">^</button>
+                    <button class="operand button">mod</button>
+                    <button class="operand button">+/-</button>
+                    <button id = "clear"  class="operand button">C</button>
+                    <button class="operand button">/</button>
+                </p>
+                <p>
+                    <button class="operand button">cos</button>
+                    <button class="operand button">√</button>
+                    <button class="number button" >7</button>
+                    <button class="number button" >8</button>
+                    <button class="number button" >9</button>
+                    <button class="operand button">*</button>
+                </p>
+                <p>
+                    <button class="operand button">tg</button>
+                    <button class="operand button">1/x</button>
+                    <button class="number button" >4</button>
+                    <button class="number button" >5</button>
+                    <button class="number button" >6</button>
+                    <button class="operand button">-</button>
+                </p>
+                <p>
+                    <button class="operand button">ctg</button>
+                    <button class="operand button">log</button>
+                    <button class="number button">1</button>
+                    <button class="number button">2</button>
+                    <button class="number button">3</button>
+                    <button class="operand button">+</button>
+                </p>
+                <p>
+                    <button class="operand button">π</button>
+                    <button class="operand button">e</button>
+                    <button class="number button"  >0</button>
+                    <button class="number button">.</button>
+                    <button id="ravno" class="operand button">=</button>
+                </p>
+                <p>
+
+                </p>
+            </div>
         </div>
         <!--<div id="div1">
             <input id="inpM" type="text" placeholder="Введите массив">

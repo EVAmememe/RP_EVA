@@ -1,47 +1,61 @@
 .button {
     width: 50px;
     height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
 }
 body {
     background-size: 100%;
 }
-.div1 {
+.div {
     left: 0px;
     top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 300px;
-    width: 200px;
+    height: 350px;
+    width: 420px;
     border: 5px solid rgb(0, 0, 0);
     margin-right: 170px;
-    border-radius: 35px;
+    border-radius: 25px;
     background: rgb(247, 180, 247);
 }
-.div2 {
-    left: 0px;
-    top: 5px;
+.div1 {
+    position: absolute;
+    left: 17px;
+    top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 500px;
-    width: 350px;
-    border: 5px solid rgb(0, 0, 0);
+    height: 253px;
+    width: 50px;
+    border: 3px solid rgb(0, 0, 0);
     margin-right: 170px;
-    border-radius: 35px;
-    background: rgb(247, 180, 247);
+    border-radius: 3px;
+    background: rgb(189, 3, 189);
+}
+.div2 {
+    position: absolute;
+    left: 75px;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 350px;
+    width: 350px;
 }
 #input {
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 320px;
     height: 40px;
-}
-#ravno {
-    width: 150px;
-
+    font-size: 20px;
+    border: 3px solid rgb(0, 0, 0);
+    background: rgb(248, 218, 245);
+    text-align: right;
 }
 #div3 {
     position: absolute;
@@ -62,5 +76,17 @@ p {
     font-size: 30px;
     color: #000000;
     line-height: 10px;
-    margin-top: -10px;
+    margin-top: -15px;
+}
+.operand {
+    background: rgb(201, 199, 199);
+}
+#ravno {
+    width: 105px;
+    background:blue;
+    color: white;
+
+}
+#clear {
+    background: rgb(253, 199, 98);
 }

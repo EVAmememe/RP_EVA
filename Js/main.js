@@ -9,45 +9,13 @@ window.onload = function () {
     var operands = document.getElementsByClassName('operand');
     var radios = document.getElementsByClassName('numberSistem');
     console.log(numbers);
-    /*var n = 123;
-    console.log(n.toString(16));
-    console.log(n.toString(8));
-    console.log(n.toString(2));
-    console.log(n);
-    var yourNumber = 123; 
-    var hexString = yourNumber.toString(16);
-    console.log(hexString);
-    yourNumber = parseInt(hexString, 16);
-    console.log(yourNumber);*/
-
 
     for (var i = 0; i < radios.length; i++) {
         radios[i].addEventListener('click',function () {
             var number = input.value;
             number =parseInt(number, numberSystem);
             numberSystem = this.dataset.system-0;
-            input.value = number.toString(numberSystem);
-            //v desyat
-            //numberSystem = this.dataset.system -0;
-            /*switch (numberSystem) {
-                case '16': number = parseInt(number, 16); break;
-                case '10': number = number-0; break;
-                case '8': number = parseInt(number, 8); break;
-                case '2': number = parseInt(number, 2); break;
-            }*/
-            // v nujnuu
-            /*switch (numberSystem) {
-                case 16: return input.value = number.toString(16);
-                case 10: return input.value = number;
-                case 8: return input.value = number.toString(8);
-                case 2: return input.value = number.toString(2);
-            }*/
-
-
-
-
-
-            
+            input.value = number.toString(numberSystem);    
         });
     }
     for (var i = 0; i < numbers.length; i++) {
@@ -85,11 +53,11 @@ window.onload = function () {
                     input.value = 0; 
                     operand = this.innerHTML;
                     break;
-                case'^2': 
+                /*case'^2': 
                     input.value -= 0;
                     input.value = input.value*input.value; 
-                    break;
-                case'sqrt': 
+                    break;*/
+                case'√': 
                     input.value -= 0;
                     if (input.value < 0) {
                         input.value = 0;
@@ -101,14 +69,6 @@ window.onload = function () {
                     input.value -= 0;
                     input.value = -input.value; 
                     break;
-                case'sin': 
-                    input.value -= 0;
-                    input.value =  Math.sin(input.value); 
-                    break;
-                case'cos': 
-                    input.value -= 0;
-                    input.value =  Math.cos(input.value); 
-                    break;
                 case'^': 
                     value = input.value-0;
                     input.value = 0; 
@@ -117,6 +77,38 @@ window.onload = function () {
                 case'1/x': 
                     input.value -= 0;
                     input.value = (1/input.value); 
+                    break;
+                case'sin': 
+                    input.value -= 0;
+                    input.value =  Math.sin(input.value*(Math.PI / 180)); 
+                    break;
+                case'cos': 
+                    input.value -= 0;
+                    input.value =  Math.cos(input.value*(Math.PI / 180)); 
+                    break;
+                case'tg': 
+                    input.value -= 0;
+                    input.value =  Math.tan(input.value*(Math.PI / 180)); 
+                    break;
+                case'ctg': 
+                    input.value -= 0;
+                    input.value =  1/(Math.tan(input.value*(Math.PI / 180))); 
+                    break;
+                case'log': 
+                    input.value -= 0;
+                    input.value = Math.log10(input.value);
+                    break;
+                case'e': 
+                    input.value -= 0;
+                    input.value = Math.E; 
+                    break;
+                case'π': 
+                    input.value -= 0;
+                    input.value = Math.PI; 
+                    break;
+                case'mod': 
+                    input.value -= 0;
+                    input.value =  Math.abs(input.value); 
                     break;
                 case'C': 
                     input.value = 0;
