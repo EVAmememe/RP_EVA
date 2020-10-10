@@ -76,7 +76,12 @@ window.onload = function () {
                     break;
                 case'1/x': 
                     input.value -= 0;
-                    input.value = (1/input.value); 
+                    console.log(input.value);
+                    if ( input.value == 0) {
+                        input.value = 0;
+                    } else {
+                        input.value = (1/input.value); 
+                    }
                     break;
                 case'sin': 
                     input.value -= 0;
@@ -96,7 +101,11 @@ window.onload = function () {
                     break;
                 case'log': 
                     input.value -= 0;
-                    input.value = Math.log10(input.value);
+                    if ( input.value <= 0) {
+                        input.value = 0;
+                    } else {
+                        input.value = Math.log10(input.value); 
+                    }
                     break;
                 case'e': 
                     input.value -= 0;
