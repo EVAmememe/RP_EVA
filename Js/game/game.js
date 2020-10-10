@@ -9,7 +9,6 @@ function stepTo() {
     var isWayNotFound = true;
     for (var i=0;i < room.ways.length;i++) {
         if (answer === room.ways[i].answer) {
-            //golod -= 5;
             step = room.ways[i].step;
             isWayNotFound = false;
             break;
@@ -20,47 +19,18 @@ function stepTo() {
         step = room.defaultStep;
         //return; 
     }
-    /*if (step === 4 || hp<=0 ) {
-        document.getElementById("imageGO").classList.remove("passiv");
-        document.getElementById("imageGO").classList.add("aktiv");
-        //var elem = document.getElementById("imageGO");
-        //elem.classList.remove("imagePassiv");
+    var chance = Math.random()*100;
+    if( chance > 9){
+        console.log('monster');
+        callMonster();
         return;
     }
-    if (step === 5 ) {
-        document.getElementById("imageYW").classList.remove("passiv");
-        document.getElementById("imageYW").classList.add("aktiv");
-        return;
-    }
-    var isWayNotFound = true;
-    for (var i=0;i < room.ways.length;i++) {
-        if (answer === room.ways[i].answer) {
-            golod -= 5;
-            step = room.ways[i].step;
-            isWayNotFound = false;
-            break;
-        }
-    }
-    if (isWayNotFound ) {
-        console.log('неправильно');
-        step = room.defaultStep;
-        return; 
-    }
-    if ( golod <= 0) {
-        hp -= 10;
-    }
-    if (step === 1 && money >= 20 && golod < 100) {
-        money -= 20;
-        golod = 100;
-    } else if (step === 7) {
-        hp -= 25;
-    }*/
     calculateStats();
     printRoomInfo();
 }
 
 function calculateStats(){
-    //проверка ХП и местоположения
+
     if(step == 1 && character.hp < 100 && character.money >= 50){
         character.hp += Math.round(5 + (character.knowledge * 0.01));
         character.money -= 50;
@@ -83,7 +53,7 @@ function calculateStats(){
     }
     stepsCount += 1;
     printAbilities();
-        //вызов сессии и рассчёт шагов
+
     if(character.hp <= 5 || character.stress > 90 || deathTimer === 1 ){
         printDeathPage();
     } 
@@ -165,6 +135,61 @@ function printDeathPage(){
     document.getElementById('death').style.background = 'red';
     //document.getElementById('SMS-TEXT').innerHTML = 'ВЫ УМЕРЛИ';
 }
+
+
+
+
+function callMonster(){
+    document.getElementById('monster').style.display = 'flex';
+    var chance = Math.random()*100;
+    if(chance > 50){
+        setMonsterInfo(1);
+    } else {
+        setMonsterInfo(0);
+    }
+}
+
+function setMonsterInfo(number){
+    document.getElementById('monster-img').src = monsters[number].img;
+    document.getElementById('monsterStats').innerHTML = monsters[number].stats;
+    document.getElementById('monsterQuestion').innerHTML = monsters[number].question;
+    document.getElementById('monsterText').innerHTML = monsters[number].text;
+    for(var i = 0; i < monsters[number].answers.length; i++){
+        document.getElementById(`answer${i+1}`).innerHTML = monsters[number].answers[i];
+    }
+    var answerButtons = document.getElementsByClassName('answerButton');
+    for (var i = 0; i < answerButtons.length; i++) {
+        if ( i === monsters[number].rightAnswer ){
+            answerButtons[i].addEventListener('click', function () {
+                setResultFromMonster(true, number);
+            });
+        } else {
+            answerButtons[i].addEventListener('click', function () {
+                setResultFromMonster(false, number);
+            });
+        }
+    }
+}
+
+function setResultFromMonster(isYouRight, number){
+    console.log('rez');
+    console.log(isYouRight);
+    if (isYouRight) {
+        character.knowledge += 30; 
+    } else {
+        character.hp -= monsters[number].result.damage;
+        character.stress += monsters[number].result.stress;  
+    } 
+    document.getElementById('monster').style.display = 'none';
+    calculateStats();  
+}
+
+
+
+
+
+
+
 
 /*<label><b>Парень</b></label>
 <label>Старторые характеристики:</label>

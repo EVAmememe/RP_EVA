@@ -104,35 +104,54 @@ var rooms = [
         defaultStep: 6,
         image: "kartinki/room7.jpg"
     },
-    ];
-
+];
+    var monsters = [
+        {name: 'Rodionova', 
+        stats: '(Родионова А.Г, урон 5, стресс поднимается до 80)',
+        question: 'Здравствуй, студент, вот тебе задача с прошлой лекции:',
+        text: '狗，在這裡聽，要么決定我的雙射，要么我將我的雙射放在您的投影中，希望您能理解一切，狗會發臭，我會開除您的，但我認為您將獲得三千獎學金來生活幾個月，浮渣，還有，你想讓我讀一下摩根森式的說唱嗎？我讀的太快了，以至於您在談論序號。你死了還是沒混蛋？',
+        img: 'kartinki/Rodionova.jpg',
+        answers: ['да', 'нет', 'крокодил', 'синий'],
+        rightAnswer: 2,
+        result: { damage: 5, stress: 50}
+        },
+        {name: 'Trusov', 
+        stats: '(Трусов А.С, урон 55, стресс +30)',
+        question: 'Сделал домашку? Дай-ка проверю, будущий солдат:',
+        text: 'Ну и говно-код вы написали, сударь, вас бы в армию так то вынести к чертям собачим, а это что? Вы это называете вёрсткой? КТО, МАТЬ ТВОЮ, ПИШЕТ КИРИЛЛИЦЕЙ ГРЁБАННЫЕ НАЗВАНИЯ ПЕРЕМЕННЫХ, ПЁС? ВЫМЕТАЙСЯ ОТСЮДА, ПОКА Я ПОЛИЦИЮ НЕ ВЫЗВАЛ!',
+        img: 'kartinki/trusovBefore.jpg',
+        answers: ['уйти', 'покаяться', 'умолять на коленях', 'поплакать и исправить'],
+        rightAnswer: 1,
+        result: { damage: 35, stress: 30}
+        },
+    ]
     //var step = 0;
 
-    var characters = [
-        {
-            name: 'Девушка',
-            hp: 80,
-            money: 800,
-            knowledge: 15,
-            stress: 15
-        },
-        {
-            name: 'Парень',
-            hp: 100,
-            money: 500,
-            knowledge: 10,
-            stress: 10
-        },
-        {
-            name: 'Покемон',
-            hp: 450,
-            money: 12800,
-            knowledge: 3,
-            stress: 0
-        },
-    ];
+var characters = [
+    {
+        name: 'Девушка',
+        hp: 80,
+        money: 800,
+        knowledge: 15,
+        stress: 15
+    },
+    {
+        name: 'Парень',
+        hp: 100,
+        money: 500,
+        knowledge: 10,
+        stress: 10
+    },
+    {
+        name: 'Покемон',
+        hp: 450,
+        money: 12800,
+        knowledge: 3,
+        stress: 0
+    },
+];
 
-    var character = {
+var character = {
 
-    };
+};
     

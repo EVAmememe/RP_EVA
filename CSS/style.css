@@ -55,11 +55,11 @@
     display: none;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 0px;
     position: absolute;
     background: #4585c0;
-    height: 600px;
-    width: 900px;
+    height: 1000px;
+    width: 1920px;
 }
 #imageGO {
     position: absolute;
@@ -68,8 +68,26 @@
     width: 1920px;
     height: 1600px;
 }
-
-
+#monster{
+    position: absolute;
+    height: 1300px;
+    width: 1920px;
+    display: none;
+    margin-top: 0px;
+    background: 	#5F2580;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+#monster-img{
+    width: 300px;
+    height: 400px;
+}
+.answerButton {
+    margin: 50px;
+    width: 80px;
+}
 
 
 
