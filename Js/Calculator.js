@@ -1,237 +1,194 @@
 function Calculator () {
-    var value = 0,
-        value2 = 0;
+    var value1 = '';
+    var value2 = 0;
     var operation;
 
     this.toNumber = function (system,val) {
         val = parseInt(val, system);
         return val.toString(system);
     };
-            //var number = input.value;
+            //var number = input.value1;
             //number = parseInt(number, numberSystem);
             //numberSystem = system-0;
             //return number.toString(numberSystem);    
 
     this.setValue = function (symvol) {
-        if (value) {
-            value  = (value.toString() + symvol) - 0;
+        if (value1) {
+            value1  = (value1.toString() + symvol);
         }   else {
-            value = symvol-0;
+            value1 = symvol;
         }  
-        return value; 
+        return value1; 
+    };
+
+    this.none = function () {
+        return value1;
     };
 
     this.dot = function () {
-        if ( value.toString().indexOf('.') === -1 ) {
-            value += '.';   
+        if ( value1.toString().indexOf('.') === -1 ) {
+            value1 += '.';   
         }
-        return value;
+        return value1;
     };
 
     this.clear = function() {
-        value = 0;
+        value1 = '';
         value2 = 0;
         operation = null;
-        return value;
+        return value1;
+    };
+
+    this.ls = function() {
+        value1 += '(';
+        return value1;
+    };
+
+    this.rs = function() {
+        value1 += ')';
+        return value1;
+    };
+
+    this.com = function() {
+        value1 += ',';
+        return value1;
     };
 
     this.add = function() {
-        operation = 'add';
-        if (value && value2) {
-            value = value-0;
-            //value2 = value2-0;
-            //var t = value;
-            value = value + value2;
-            //value2 = value - t;
-            //console.log(t, value, value2 );
-        } else {
-            value2 = value-0;
-            value = 0;
+        if (value1) {
+            value1 += '+';
+        }   else {       
         }
-        return value;
+        return value1;
     };
 
     this.sub = function() {
-        operation = 'sub';
-        if (value && value2) {
-            value = value2 - value;
-        } else {
-            value2 = value-0;
-            value = 0;
+        if (value1) {
+            value1 += '-';
+        }   else {
+            value1 = '-';
         }
-        return value;
+        return value1;
     };
 
     this.mult = function() {
-        operation = 'mult';
-        if (value && value2) {
-            value = value2 * value;
-        } else {
-            value2 = value-0;
-            value = 0;
+        if (value1) {
+            value1 += '*';
+        }   else {
         }
-        return value;
+        return value1;
     };
 
     this.divi = function() {
-        operation = 'divi';
-        if (value && value2) {
-            value = value2 / value;
-        } else {
-            value2 = value-0;
-            value = 0;
+        if (value1) {
+            value1 += '/';
+        }   else {
         }
-        return value;
+        return value1;
     };
 
     this.pow = function() {
-        operation = 'pow';
-        if (value && value2) {
-            value = Math.pow(value2,(value-0));
-        } else {
-            value2 = value-0;
-            value = 0;
-        }
-        return value;
+        value1 += 'pow(';
+        return value1;
     };
 
     this.root = function() {
-        operation = 'root';
-        if (value && value2) {
-            value = Math.pow(value2,1/(value-0));
-        } else {
-            value2 = value-0;
-            value = 0;
-        }
-        return value;
+        value1 += 'root(';
+        return value1;
     };
 
     this.sqr = function() {
-        operation = 'sqr';
-        if (value) {
-            value =  value*value;
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'sqr(';
+        return value1;
     };
 
     this.sqrt = function() {
-        operation = 'sqrt';
-        if (value) {
-            value =  Math.sqrt(value);
-        } else {
-            value = 0;
+        if (value1) {
+            value1 += 'sqrt(';
+        }   else {
+            value1 = 'sqrt(';
         }
-        return value;
+        return value1;
     };
 
     this.pm = function() {
-        operation = 'pm';
-        if (value) {
-            value =  -value;
+        console.log(value1[0]);
+        if (value1[0] === '-') {
+            value1 = value1.substr(1);
         } else {
-            value = 0;
+            value1 = '-'.concat(value1);
         }
-        return value;
+        return value1;
     };
 
     this.rev = function() {
-        operation = 'rev';
-        if (value) {
-            if (value == 0) {
-                value = 0;
-            } else {
-                value =  1/value;
-            }
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += '(1/';
+        return value1;
     };
 
     this.sin = function() {
-        operation = 'sin';
-        if (value) {
-           value = Math.sin(value*(Math.PI / 180)); 
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'sin(';
+        return value1;
     };
 
     this.cos = function() {
-        operation = 'cos';
-        if (value) {
-           value = Math.cos(value*(Math.PI / 180)); 
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'cos(';
+        return value1;
     };
 
     this.tan = function() {
-        operation = 'tan';
-        if (value) {
-           value = Math.tan(value*(Math.PI / 180)); 
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'tan(';
+        return value1;
     };
 
     this.ctan = function() {
-        operation = 'ctan';
-        if (value) {
-           value = 1/Math.tan(value*(Math.PI / 180)); 
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'ctan(';
+        return value1;
     };
 
     this.log = function() {
-        operation = 'log';
-        if (value) {
-            if (value <= 0) {
-                value = 0;
-            } else {
-                value =  Math.log10(value);
-            }
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'log(';
+        return value1;
     };
 
     this.mod = function() {
-        operation = 'mod';
-        if (value) {
-                value =  Math.abs(value);
-        } else {
-            value = 0;
-        }
-        return value;
+        value1 += 'abs(';
+        return value1;
     };
 
     this.e = function() {
-        operation = 'e';
-        value  = Math.E; 
-        return value;
+        value1 += 'e';
+        return value1;
     };
 
     this.pi = function() {
-        operation = 'pi';
-        value  = Math.PI; 
-        return value;
+        value1 += 'π';
+        return value1;
+    };
+
+    this.erase = function() {
+        value1 = value1.slice(0,-1);
+        console.log( value1);
+        return value1;
+    };
+
+    this.ans = function() {
+        value1 += value2;
+        return value1;
     };
 
     this.equal = function() {
-        if (operation && this[operation] instanceof Function) {
-            value = this[operation]();
+        console.log((value1.split("(").length - 1)-(value1.split(")").length - 1));
+        var t = (value1.split("(").length - 1)-(value1.split(")").length - 1);
+        for (i=0;i< t ; i++) { value1 += ")"}
+        console.log (value1);
+        value2 = eval(value1);
+        value1 = '';
+        /*if (operation && this[operation] instanceof Function) {
+            value1 = this[operation]();
             operation = null;
         }
-        value2 = 0;
-        return value;
+        value12 = 0;*/
+        return `Ans = ${value2}`;
     };
 }
