@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <title>Калькулятор</title>
         <link href="CSS\style.css" rel="stylesheet">
+        <script src="Js\Calculator.js"></script>
         <script src="Js\main.js"></script>   
     </head>
     <body background="kartinki\1.jpg">
+
         <div class = "div">
+            <input id = "input" class= 'input' disabled><br>
             <div class = "div1">
                 <input data-system="16" id="hex" type="radio" name="toNumber" class='numberSistem' ><label for="hex" >Hex</label><br>
                 <input data-system="10" id="dec" type="radio" name="toNumber" class='numberSistem' ><label for="dec" >Dec</label><br>
@@ -15,47 +18,48 @@
                 <input data-system="2"  id="bin" type="radio" name="toNumber" class='numberSistem' ><label for="bin" >Bin</label><br>
             </div>
             <div class = "div2">
-                <input id = "input"  disabled><br>
+
                 <!--dir = "rtl"-->
         
                 <p>
-                    <button class="operand button">sin</button>
-                    <button class="operand button">^</button>
-                    <button class="operand button">mod</button>
-                    <button class="operand button">+/-</button>
-                    <button id = "clear"  class="operand button">C</button>
-                    <button class="operand button">/</button>
+                    <button class="operand button" data-operand="log">log</button>
+                    <button class="operand button" data-operand="sin">sin</button>
+                    <button class="operand button" data-operand="pow">^</button>
+                    <button class="operand button" data-operand="mod">mod</button>
+                    <button class="operand button" data-operand="pm">+/-</button>
+                    <button id = "clear"  class="button">C</button>
+                    <button class="operand button" data-operand="divi">/</button>
                 </p>
                 <p>
-                    <button class="operand button">cos</button>
-                    <button class="operand button">√</button>
-                    <button class="number button" >7</button>
-                    <button class="number button" >8</button>
-                    <button class="number button" >9</button>
-                    <button class="operand button">*</button>
+                    <button class="operand button" data-operand="cos">cos</button>
+                    <button class="operand button" data-operand="sqrt">√</button>
+                    <button class="number button"  data-number="7">7</button>
+                    <button class="number button"  data-number="8">8</button>
+                    <button class="number button" data-number="9">9</button>
+                    <button class="operand button" data-operand="mult">*</button>
                 </p>
                 <p>
-                    <button class="operand button">tg</button>
-                    <button class="operand button">1/x</button>
-                    <button class="number button" >4</button>
-                    <button class="number button" >5</button>
-                    <button class="number button" >6</button>
-                    <button class="operand button">-</button>
+                    <button class="operand button" data-operand="tan">tg</button>
+                    <button class="operand button" data-operand="rev">1/x</button>
+                    <button class="number button" data-number="4">4</button>
+                    <button class="number button" data-number="5">5</button>
+                    <button class="number button" data-number="6">6</button>
+                    <button class="operand button" data-operand="sub">-</button>
                 </p>
                 <p>
-                    <button class="operand button">ctg</button>
-                    <button class="operand button">log</button>
-                    <button class="number button">1</button>
-                    <button class="number button">2</button>
-                    <button class="number button">3</button>
-                    <button class="operand button">+</button>
+                    <button class="operand button" data-operand="ctan">ctg</button>
+                    <button class="operand button" data-operand="root">n√</button>
+                    <button class="number button"data-number="1">1</button>
+                    <button class="number button"data-number="2">2</button>
+                    <button class="number button"data-number="3">3</button>
+                    <button class="operand button" data-operand="add" >+</button>
                 </p>
                 <p>
-                    <button class="operand button">π</button>
-                    <button class="operand button">e</button>
-                    <button class="number button"  >0</button>
-                    <button class="number button">.</button>
-                    <button id="ravno" class="operand button">=</button>
+                    <button class="operand button" data-operand="pi">π</button>
+                    <button class="operand button" data-operand="e">e</button>
+                    <button class="number button"  data-number="0">0</button>
+                    <button id="dot" class="button"  data-number=".">.</button>
+                    <button id="ravno" class="operand button" data-operand='equal'>=</button>
                 </p>
                 <p>
 
