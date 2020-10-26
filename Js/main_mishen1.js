@@ -194,7 +194,7 @@ function shootAll () {
 
         shoot();
         if (Math.sqrt((Math.abs(x)-r)*(Math.abs(x)-r)+ (Math.abs(y)-r)*(Math.abs(y)-r)) >=r && Math.abs(x)<=r && Math.abs(y)<=r ) {
-            document.getElementById('vivod').innerHTML = 'Попал в Звезду!(10 очков)';
+            document.getElementById('vivod').innerHTML = 'Попал в хрень!(10 очков)';
         } else if (Math.abs(x)+ Math.abs(y)<=r ) {
             document.getElementById('vivod').innerHTML = 'Попал в ромб!(5 очков)';
         } else if (Math.sqrt(x*x+y*y) <=r ) {
